@@ -199,3 +199,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// ===== Scroll to Top Button =====
+const scrollTopBtn = document.getElementById("scroll-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

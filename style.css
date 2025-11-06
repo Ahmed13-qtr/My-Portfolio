@@ -605,6 +605,48 @@ footer {
   font-size: 1.4rem;
 }
 
+/* ===== Scroll to Top Button ===== */
+#scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--theme-accent);
+  color: #000;
+  font-size: 1.6rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+#scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scroll-top:hover {
+  background: #fff;
+  color: var(--theme-accent);
+}
+
+/* الوضع الفاتح */
+html[data-theme="light"] #scroll-top {
+  background: var(--theme-accent);
+  color: #000;
+}
+html[data-theme="light"] #scroll-top:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
+
 /* reset any light-mode overrides */
 body.light-mode,
 body.light {
