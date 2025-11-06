@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Ahmed | Portfolio</title>
+</head>
+<body>
+  
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  
+<div id="particles-js"></div>
+
+  <div id="progress-bar"></div>
+  <header>
+    <a href="#" class="Logo">Ahmed</a>
+    <i class="fa-solid fa-bars" id="menu-icon"></i>
+    <nav>
+      <a href="#home" class="Active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+    <div class="header-tools">
+      <a href="cv.pdf" class="cv-btn" download> Download CV</a>
+      <button id="mode-toggle" aria-pressed="false" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+    </div>
+
+
+
+  </header>
+
+  <!-- ===== HOME ===== -->
+  <section class="home" id="home" data-aos="fade-up">
+    <div class="home-img" data-aos="zoom-in" data-aos-delay="200">
+      <img src="profile pic.jpeg" alt="profile" />
+    </div>
+    <div class="home-content" data-aos="fade-left" data-aos-delay="300">
+      <h1>Hi, it's <span>Ahmed</span></h1>
+      <h3 class="typing-text">I am a <span></span></h3>
+      <p>
+        I’m a Front-End Developer skilled in HTML, CSS, JavaScript, React, and
+        Tailwind CSS. I create fast, responsive, and user-friendly web
+        interfaces and always strive to learn new technologies and improve my
+        craft.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ahmed-samy-a7848a225/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/Ahmed13-qtr"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/A7medMatter/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/a7medsamy13/"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <a href="#contact" class="btn" id="hireBtn">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section" data-aos="fade-up">
+    <h2 class="heading">My <span>Services</span></h2>
+    <div class="box-container">
+      <div class="box" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Development</h3>
+        <p>I design and build responsive, interactive websites with clean and modern layouts.</p>
+      </div>
+      <div class="box" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fa-solid fa-paintbrush"></i>
+        <h3>UI / UX Design</h3>
+        <p>I create beautiful and user-friendly interfaces with attention to detail and usability.</p>
+      </div>
+      <div class="box" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h3>Responsive Design</h3>
+        <p>Every website I make works perfectly on desktop, tablet, and mobile devices.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills-section" data-aos="fade-up">
+    <h2 class="heading">My <span>Skills</span></h2>
+
+    <div class="skills-container">
+      <div class="skills-info" data-aos="fade-right">
+        <h3>Skills Reflect Our Knowledge</h3>
+        <p>
+          I am passionate about building modern, responsive, and visually appealing
+          websites. My expertise covers front-end development and UI/UX design,
+          ensuring that every project is efficient and user-friendly.
+        </p>
+
+        <div class="experience-box">
+          <h1>2+</h1>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+
+      <div class="skills-bars" data-aos="fade-left">
+        <div class="bar">
+          <div class="info">
+            <span>HTML</span>
+            <span>90%</span>
+          </div>
+          <div class="line" data-percent="90%"></div>
+        </div>
+
+        <div class="bar">
+          <div class="info">
+            <span>CSS</span>
+            <span>85%</span>
+          </div>
+          <div class="line" data-percent="85%"></div>
+        </div>
+
+        <div class="bar">
+          <div class="info">
+            <span>JavaScript</span>
+            <span>75%</span>
+          </div>
+          <div class="line" data-percent="75%"></div>
+        </div>
+
+        <div class="bar">
+          <div class="info">
+            <span>React</span>
+            <span>70%</span>
+          </div>
+          <div class="line" data-percent="70%"></div>
+        </div>
+
+        <div class="bar">
+          <div class="info">
+            <span>PHP</span>
+            <span>60%</span>
+          </div>
+          <div class="line" data-percent="60%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+<section id="projects" class="section">
+  <h2 class="heading">My <span>Projects</span></h2>
+
+  <div class="projects-grid">
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="project1.jpg" alt="Portfolio Website">
+      <div class="project-info">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio using HTML, CSS, and JS.</p>
+        <a href="index.html" class="btn" target="_blank">Open</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="project2.jpg" alt="Store UI">
+      <div class="project-info">
+        <h3>Simple Store</h3>
+        <p>Basic e-commerce UI built with HTML and CSS.</p>
+        <a href="projects/store/car-dealer/index.html" class="btn" target="_blank">Open</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="project3.jpg" alt="Calculator">
+      <div class="project-info">
+        <h3>JS Calculator</h3>
+        <p>Functional calculator built in JavaScript.</p>
+        <a href="projects/calculator/index.html" class="btn" target="_blank">Open</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section" data-aos="fade-up">
+    <h2 class="heading">My <span>Education</span></h2>
+    <div class="timeline">
+      <div class="entry">
+        <h3>Bachelor’s Degree in Computer Science</h3>
+        <p>Studied core programming, algorithms, and front-end development concepts.</p>
+      </div>
+      <div class="entry">
+        <h3>Online Certifications</h3>
+        <p>Completed courses in HTML, CSS, JavaScript, React, and web accessibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section" data-aos="fade-up">
+    <h2 class="heading">My <span>Experience</span></h2>
+    <div class="timeline">
+      <div class="entry">
+        <h3>Front-End Developer</h3>
+        <p>Built responsive and optimized websites using HTML, CSS, JavaScript, and React.</p>
+      </div>
+      <div class="entry">
+        <h3>Freelance Projects</h3>
+        <p>Delivered high-quality projects to clients focusing on UI/UX and performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2 class="heading"><span>Contact</span> Me</h2>
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="reply_to" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p class="rights">© 2025 Ahmed. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

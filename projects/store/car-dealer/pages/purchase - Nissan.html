@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Complete Purchase - Arabian Cars</title>
+    <!-- نفس الهيدر الأساسي -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/purchase-style.css"> <!-- إذا استخدمت ملف منفصل -->
+</head>
+<body id="top">
+    <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">Arabian Cars Dealership</a>
+               </div>
+
+    <!-- Purchase -->
+
+    <section class="purchase-section">
+        <div class="container purchase-container">
+            <div class="text-center purchase-title">
+                <h1>Complete Your Purchase</h1>
+                <p class="lead">Please fill in your details to proceed with the transaction</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="car-summary">
+                        <h3>Your Selected Vehicle</h3>
+                        <img src="../Cars Images/Nissan Sunny 2022(1).jpeg" class="img-responsive" alt="Car Image">
+                        <h4>Nissan Sunny 2022</h4>
+                        <p><strong>Price:</strong>  660,000 EGP</p>
+                        <p><strong>Mileage:</strong> 0 km</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <form class="purchase-form" id="purchaseForm">
+                        <div class="alert-purchase alert-success" id="successAlert">
+                            Thank you! Your purchase is being processed.
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <select class="form-control" id="paymentMethod" required style="height: 45px;">
+                                <option value="">Select Option</option>
+                                <option value="cash">Cash</option>
+                                <option value="credit">Credit Card</option>
+                                <option value="installment">Installment Plan</option>
+                            </select>
+                        </div>
+
+                                                <!-- قسم تفاصيل التقسيط (يظهر فقط عند اختيار Credit) -->
+
+                        <div class="form-group" id="cardDetails" style="display:none;">
+                            <label>Credit Card Details</label>
+                            <input type="text" class="form-control" placeholder="Card Number">
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="CVV">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- قسم تفاصيل التقسيط (يظهر فقط عند اختيار Installment) -->
+                        <div id="installmentDetails" style="display: none; background: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                            <h4 style="margin-top: 0; color: #333;"><i class="fa fa-calendar"></i> Installment Plan</h4>
+                            
+                            <div class="form-group">
+                                <label>Down Payment</label>
+                                <select class="form-control" id="downPayment">
+                                    <option value="25">25% (165,000 EGP)</option>
+                                    <option value="30">30% (198,000 EGP)</option>
+                                    <option value="50">50% (330,000 EGP)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Installment Period</label>
+                                <select class="form-control" id="installmentPeriod">
+                                    <option value="12">12 Months</option>
+                                    <option value="24">24 Months</option>
+                                    <option value="36">36 Months</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Monthly Payment</label>
+                                <input type="text" class="form-control" id="monthlyPayment" readonly value="$575">
+                            </div>
+                            
+                            <div class="alert alert-info" style="font-size: 13px; padding: 10px;">
+                                <i class="fa fa-info-circle"></i> Interest rate: 5% annually
+                            </div>
+                        </div>
+                        
+                            <button type="submit" class="section-btn btn btn-primary btn-block"
+                                  onclick="prepareInvoice()"
+                                    style="padding: 12px; font-size: 16px;">
+                                <i class="fa fa-check-circle"></i> <a href="invoice Nissan.html">Confirm Purchase</a>
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+    
+    
+    <!-- نفس الفوتر بالضبط -->
+    
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            const installmentDiv = document.getElementById('installmentDetails');
+            const carPrice = 9200; // السعر الأساسي للسيارة
+            
+            if (this.value === 'installment') {
+                installmentDiv.style.display = 'block';
+                calculateInstallment();
+            } else {
+                installmentDiv.style.display = 'none';
+            }
+        });
+
+        function calculateInstallment() {
+            const downPayment = document.getElementById('downPayment');
+            const period = document.getElementById('installmentPeriod');
+            const monthlyPayment = document.getElementById('monthlyPayment');
+            const carPrice =  660000;
+            
+            const downPercent = parseFloat(downPayment.value);
+            const months = parseInt(period.value);
+            const interestRate = 0.05; // 5%
+            
+            const downAmount = carPrice * (downPercent / 100);
+            const remaining = carPrice - downAmount;
+            const totalWithInterest = remaining * (1 + interestRate * (months / 12));
+            const monthly = totalWithInterest / months;
+            
+            monthlyPayment.value = 'EGP ' + monthly.toFixed(2);
+        }
+
+        // تحديث الحساب عند تغيير القيم
+        document.getElementById('downPayment').addEventListener('change', calculateInstallment);
+        document.getElementById('installmentPeriod').addEventListener('change', calculateInstallment);
+
+
+        // عرض تفاصيل البطاقة إذا تم اختيار Credit Card
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            document.getElementById('cardDetails').style.display = 
+                this.value === 'credit' ? 'block' : 'none';
+        });
+        
+        // معالجة النموذج
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successAlert').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // الفاتوره 
+        function prepareInvoice() {
+    // جمع بيانات النموذج
+    const carName = "Chevrolet Optra 2018"; // يمكن تغيير هذا لقيمة ديناميكية
+    const carPrice = "$9,200";
+    const paymentMethod = document.querySelector('select[name="payment"]').value;
+    
+    // تخزين البيانات في localStorage
+    localStorage.setItem('invoiceData', JSON.stringify({
+        carName: carName,
+        carPrice: carPrice,
+        paymentMethod: paymentMethod,
+        customerName: document.getElementById('fullName').value,
+        customerEmail: document.getElementById('email').value,
+        customerPhone: document.getElementById('phone').value
+    }));
+    
+    // الانتقال لصفحة الفاتورة
+    window.location.href = 'invoice.html';
+}
+</script>
+</body>
+</html>

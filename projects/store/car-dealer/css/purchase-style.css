@@ -1,0 +1,134 @@
+/* Purchase Page Styling - متطابق تماماً مع الموقع */
+
+section.purchase-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.purchase-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.purchase-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.purchase-title h1 {
+    font-size: 28px;
+    color: #1e1e1e;
+    margin-bottom: 15px;
+}
+
+.purchase-title p.lead {
+    color: #666;
+    font-size: 16px;
+}
+
+/* نموذج الشراء - مطابق لتصميم النماذج الأخرى */
+.purchase-form {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.purchase-form .form-group {
+    margin-bottom: 20px;
+}
+
+.purchase-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.purchase-form .form-control {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.purchase-form .form-control:focus {
+    border-color: #1e1e1e;
+    box-shadow: none;
+}
+
+.purchase-form textarea.form-control {
+    height: 120px;
+    resize: vertical;
+}
+
+/* الأزرار - مطابقة تماماً للأصلية */
+.btn-purchase {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* تضمن أن العرض يتناسب مع الحاوية */
+}
+
+.btn-purchase:hover {
+    background-color: #29ca8e;
+    color: #fff;
+}
+
+/* قسم تفاصيل السيارة */
+.car-summary {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.car-summary-content {
+    max-width: 100%; /* تحديث لجعل المحتوى يأخذ نفس العرض */
+}
+
+.car-summary h3 {
+    color: #1e1e1e;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.car-summary img {
+    max-width: 100%;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    display: block; /* تضمن أن الصورة تأخذ العرض الكامل */
+}
+
+/* تنبيهات */
+.alert-purchase {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    display: none;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+/* التوافق مع الموبايل */
+@media (max-width: 768px) {
+    .purchase-form {
+        padding: 20px;
+    }
+    
+    .purchase-title h1 {
+        font-size: 24px;
+    }
+}
