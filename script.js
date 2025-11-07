@@ -214,3 +214,60 @@ window.addEventListener("scroll", () => {
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===== Video Popup =====
+const playBtn = document.getElementById("play-video");
+const videoPopup = document.getElementById("video-popup");
+const closeVideo = document.getElementById("close-video");
+const demoVideo = document.getElementById("demo-video");
+
+playBtn.addEventListener("click", () => {
+  videoPopup.classList.add("active");
+  demoVideo.play();
+});
+
+closeVideo.addEventListener("click", () => {
+  videoPopup.classList.remove("active");
+  demoVideo.pause();
+  demoVideo.currentTime = 0;
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === videoPopup) {
+    videoPopup.classList.remove("active");
+    demoVideo.pause();
+    demoVideo.currentTime = 0;
+  }
+});
